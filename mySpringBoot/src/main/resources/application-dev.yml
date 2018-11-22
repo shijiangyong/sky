@@ -7,4 +7,6 @@ spring:
     username: root
     password: sa@123
 mybatis:
-  type-aliases-package: com.example.demo.model
+  #type-aliases-package: com.example.demo.model
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/myBatis-config.xml

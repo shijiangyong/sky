@@ -17,6 +17,11 @@ public class JsonResult {
         this.result = result;
     }
 
+    public JsonResult status(String status){
+        this.status = status;
+        return this;
+    }
+
     public String getStatus() {
         return status;
     }

@@ -1,18 +1,20 @@
-package com.example.demo.service;
+package com.example.demo.mapper;
 
 import com.example.demo.model.MyBatisUser;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @author shijy
- * @Date 2018/11/21 15 : 54
+ * @Date 2018/11/22 13 : 41
  * @Descriprion
  */
-public interface BatisUserService {
-
+@Repository
+public interface UserMapper {
     /**
-     * 根据ID差用户信息
+     * 查找用户
      * @param id
      * @return
      */
@@ -29,7 +31,7 @@ public interface BatisUserService {
      * @param user
      * @return
      */
-    int add(MyBatisUser user);
+    int addUser(MyBatisUser user);
 
     /**
      * 更新用户
@@ -37,12 +39,12 @@ public interface BatisUserService {
      * @param user
      * @return
      */
-    int update(Integer id,MyBatisUser user);
+    int updateUser(@Param("id") Integer id, @Param("user") MyBatisUser user);
 
     /**
      * 删除用户
      * @param id
      * @return
      */
-    int delete(Integer id);
+    int deleteUser(Integer id);
 }
